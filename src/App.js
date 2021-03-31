@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import List from './List'
 import Alert from './Alert'
+import Button from 'react-bootstrap/Button'
 
 import Card from 'react-bootstrap/Card'
+import { Container } from 'react-bootstrap'
 
 const getLocalStorage = () =>{
   let list = localStorage.getItem('list');
@@ -67,7 +69,7 @@ function App() {
   }
 
   const editPost = (id) => {
-    const specificPost = list.find((item) => item.id == id);
+    const specificPost = list.find((item) => item.id === id);
     setIsEditing(true);
     setEditId(id)
     setName(specificPost.title)
@@ -78,8 +80,9 @@ function App() {
    },[list])
 
   return (
+    <Container >
     <Card>
-      <form className="grocery-form" onSubmit={handleSubmit}>
+      <form className="input-form" onSubmit={handleSubmit}>
         {alert.show && <Alert {...alert} 
         removeAlert={showAlert}
         list={list} />}
@@ -88,7 +91,7 @@ function App() {
         <h3>Your Thoughts</h3>
         <div className="form-control">
           <input type="text" 
-          className=" grocery" 
+          className=" input-thought" 
           placeholder="Speak your mind!"
           value={name}
           onChange={(e)=> setName(e.target.value)}
@@ -98,17 +101,29 @@ function App() {
           </button>
         </div>
       </form>
+    </Card>
+    <Container>
       {list.length > 0 && (
-        <div className="grocery-container">
+      <Container >
+       <Container className="thought-card">
         <List items={list} 
         removePost={clearPost}
         editPost={editPost}
         />
-        <button className="clear-btn" onClick={clearAllItems} >Clear items</button>
-      </div>
+        
+      </Container>
+        {list.length > 1 && 
+          <Button variant="danger"
+        className="clear-btn" 
+        onClick={clearAllItems} >Delete All
+          </Button>}
+        
+        
+        </Container>
       )}
       
-    </Card>
+    </Container>
+  </Container>
     );
 }
 

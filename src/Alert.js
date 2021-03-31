@@ -6,9 +6,9 @@ useEffect(()=>{
     removeAlert()
   },2000)
   return ()=> clearTimeout(timeout)
-},[list])
+},[list,removeAlert])
 
   return <p className={`alert alert-${type}`}>{msg}</p>
 }
 
-export default Alert
+export default Alert;

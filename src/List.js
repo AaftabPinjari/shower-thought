@@ -1,28 +1,31 @@
 import React from 'react'
-import { FaEdit, FaTrash } from 'react-icons/fa'
+import  Container  from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 const List = ({items, removePost,editPost}) => {
   return (
-  <div className="grocery-list">
+  <Container className="mb-1" >
     {items.map((item)=>{
       const {id,title} = item;
-      return <article key={id} className="grocery-item">
-       <p className="title">{title}</p>
-       <div className="btn-container">
-        <button type="button" 
-        className="edit-btn"
+      return <Card key={id} >
+       <Card.Text>{title}</Card.Text>
+       <Container className="btn-container" >
+        <Button type="button" 
+        variant="primary"
+        className="edit-btn "
         onClick={()=> editPost(id)}>
-          <FaEdit />
-        </button>
-        <button type="button" className="delete-btn" 
+          Edit
+        </Button>
+        <Button type="button" variant="outline-danger" className="delete-btn" 
         onClick={()=> removePost(id)}>
-          <FaTrash />
-        </button>
-       </div>
+          Delete
+        </Button>
+       </Container>
       
-      </article>
+      </Card>
     })}
   
-  </div>
+  </Container>
   );
 }
 

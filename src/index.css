@@ -138,16 +138,9 @@ p {
   background: var(--clr-black);
 }
 /* section */
-.section {
-  padding: 5rem 0;
-}
 
-.section-center {
-  width: 90vw;
-  margin: 0 auto;
-  max-width: 35rem;
-  margin-top: 8rem;
-}
+
+
 
 .card {
   width: 90vw;
@@ -207,7 +200,7 @@ Grocery List
   color: #155724;
   background: #d4edda;
 }
-.grocery-form h3 {
+.input-form h3 {
   color: var(--clr-primary-1);
   margin-bottom: 1.5rem;
   text-align: center;
@@ -216,7 +209,7 @@ Grocery List
   display: flex;
   justify-content: center;
 }
-.grocery {
+.input-thought {
   padding: 0.25rem;
   padding-left: 1rem;
   background: var(--clr-grey-10);
@@ -227,7 +220,7 @@ Grocery List
   flex: 1 0 auto;
   color: var(--clr-grey-5);
 }
-.grocery::placeholder {
+.input-thought::placeholder {
   font-family: var(--ff-secondary);
   color: var(--clr-grey-5);
 }
@@ -252,32 +245,18 @@ Grocery List
   color: var(--clr-white);
 }
 
-.grocery-container {
-  margin-top: 2rem;
-}
 
-.grocery-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.5rem;
-  transition: var(--transition);
-  padding: 0.25rem 1rem;
-  border-radius: var(--radius);
-  text-transform: capitalize;
-}
-.grocery-item:hover {
-  color: var(--clr-grey-5);
-  background: var(--clr-grey-10);
-}
-.grocery-item:hover .title {
-  color: var(--clr-grey-5);
-}
+
+
 .title {
   margin-bottom: 0;
   color: var(--clr-grey-1);
   letter-spacing: 2px;
   transition: var(--transition);
+}
+.btn-container{
+  display: flex;
+  justify-content: space-around;
 }
 .edit-btn,
 .delete-btn {
@@ -285,7 +264,7 @@ Grocery List
   border-color: transparent;
   cursor: pointer;
   font-size: 0.7rem;
-  margin: 0 0.15rem;
+  margin: 0 2rem;
   transition: var(--transition);
 }
 .edit-btn {
@@ -303,7 +282,7 @@ Grocery List
 .clear-btn {
   text-transform: capitalize;
   width: 10rem;
-  height: 1.5rem;
+  height: 2.5rem;
   display: grid;
   align-items: center;
   background: transparent;
@@ -315,7 +294,9 @@ Grocery List
   cursor: pointer;
   transition: var(--transition);
   margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
-.clear-btn:hover {
-  color: var(--clr-red-dark);
+Card .thought-card{
+  margin: 0;
 }
+
