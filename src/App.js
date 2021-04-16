@@ -85,7 +85,8 @@ function App() {
       <form className="input-form" onSubmit={handleSubmit}>
         {alert.show && <Alert {...alert} 
         removeAlert={showAlert}
-        list={list} />}
+        list={list}
+         />}
         
         
         <h3>Your Thoughts</h3>
