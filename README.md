@@ -1,4 +1,4 @@
-# Sitte Link [Shower Thoughts](https://shower-thought.netlify.app/)
+# Site Link [Shower Thoughts](https://shower-thought.netlify.app/)
 
 # Getting Started with Create React App
 
